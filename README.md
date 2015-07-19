@@ -1,6 +1,6 @@
 # ansible-enabled dotfiles
 
-Because I never want to have to do any of this ever again.
+Because I never want to do any of this over again.
 
 # usage example: 
 
