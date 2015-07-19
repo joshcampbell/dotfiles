@@ -35,5 +35,3 @@
       template: src={{ item }} dest=~/.{{ item }}
       with_items:
         - vimrc
-
-    - name: 
