@@ -20,3 +20,4 @@ Because I never want to do any of this over again.
 - x11 desktop with vino / vinagre
 - vagrant file (for easy ubuntu guest OSes in windows & osx)
   - CLI and X versions
+- ubuntu / centos agnosticism
