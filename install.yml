@@ -14,6 +14,7 @@
         - tree
         - silversearcher-ag
         - cowsay
+        - ansible
 
     ### cut here for vim.yml ###
     - name: install vim dependencies
@@ -35,3 +36,13 @@
       template: src={{ item }} dest=~/.{{ item }}
       with_items:
         - vimrc
+
+    - name: fetch vim plugins from github
+      git: repo=https://github.com/{{ item }} dest=~/.vim/bundle/{{ item.split("/")[1] }}
+      with_items:
+        - rking/ag.vim
+        - tpope/vim-fugitive
+        - tpope/vim-sensible
+        - tpope/vim-markdown
+        - tpope/vim-jdaddy
+        - tpope/vim-eunuch

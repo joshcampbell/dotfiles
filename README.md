@@ -5,7 +5,7 @@ Because I never want to do any of this over again.
 # usage example: 
 
 ```
-   sudo ./install.sh
+   ./install.sh
 ```
 
 ## or 
