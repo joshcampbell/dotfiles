@@ -1,0 +1,39 @@
+---
+# usage example: 
+#   sudo ./install.sh
+#   - or -
+#   sudo ansible-playbook install.yml -vvvv -c local -i 127.0.0.1,
+#         (yes, the comma is necessary)
+
+- hosts: all
+  tasks: 
+    - name: install dependencies
+      apt: state=present name={{ item }}
+      with_items:
+        - tmux
+        - tree
+        - silversearcher-ag
+        - cowsay
+
+    ### cut here for vim.yml ###
+    - name: install vim dependencies
+      apt: state=present name={{ item }}
+      with_items:
+        - vim
+        - silversearcher-ag
+
+    - name: ensure vim directories exist
+      file: state=directory name={{ item }}
+      with_items:
+        - ~/.vim/autoload
+        - ~/.vim/bundle
+
+    - name: install vim-pathogen
+      copy: src=pathogen.vim dest=~/.vim/autoload/pathogen.vim
+
+    - name: write dotfiles
+      template: src={{ item }} dest=~/.{{ item }}
+      with_items:
+        - vimrc
+
+    - name: 
