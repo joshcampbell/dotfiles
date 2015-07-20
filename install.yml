@@ -8,12 +8,10 @@
 - hosts: all
   tasks: 
     - name: install dependencies
-      apt: state=present name={{ item }}
+      yum: state=present name={{ item }}
       with_items:
         - tmux
         - tree
-        - silversearcher-ag
-        - cowsay
 
     ### ebookz.yml ###
     - name: install calibre
@@ -55,10 +53,23 @@
 
     - name: symlink vino-server into /usr/bin
       file: src=/usr/lib/vino/vino-server dest=/usr/bin/vino-server state=link
+    
+    ### cut here for silver-searcher.yml ###
+    - name: fetch dependencies
+      yum: state=present name={{ item }}
+      with_items:
+        - "@pcre-devel"
+        - "@xz-devel"
+
+    - name: clone the silver searcher repo
+      git: repo=https://github.com/ggreer/the_silver_searcher dest=~/src/the_silver_searcher
+
+    - name: run the build script
+      shell: "./build.sh && sudo make install chdir=~/src/the_silver_searcher"
 
     ### cut here for vim.yml ###
     - name: install vim dependencies
-      apt: state=present name={{ item }}
+      yum: state=present name={{ item }}
       with_items:
         - vim
         - silversearcher-ag
