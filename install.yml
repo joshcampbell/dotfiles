@@ -13,14 +13,16 @@
         - tmux
         - tree
 
-    ### ebookz.yml ###
-    - name: install calibre
-      # mostly useful for 'ebook-convert'
-      apt: state=present name=calibre
+    ### cowsay.yml ###
+    - name: check cowsay out from github
+      git: repo=https://github.com/schacon/cowsay dest=~/.cowsay
+
+    - name: run the install script
+      shell: sh install.sh chdir=~/.cowsay
 
     ### tmux.yml ###
     - name: install dependencies
-      apt: state=present name={{ item }}
+      yum: state=present name={{ item }}
       with_items:
         - tmux
 
@@ -52,7 +54,7 @@
       with_items: [ 'vino', 'vinagre' ]
 
     - name: symlink vino-server into /usr/bin
-      file: src=/usr/lib/vino/vino-server dest=/usr/bin/vino-server state=link
+      file: src=/usr/libexec/vino-server dest=/usr/bin/vino-server state=link
     
     ### cut here for silver-searcher.yml ###
     # FIXME
