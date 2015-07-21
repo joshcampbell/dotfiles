@@ -7,6 +7,8 @@
    - pass in via CLI with e.g. `--extra-vars "tmux-bar-color=orange foo=bar"`
    - persist somewhere in ~/ so you only have to specify it once
 - build desktop environment for cloud-pairing over vino/vinagre
+  - separate generic dev environment role from graphical role
+  - (sizes of packages, length of install)
 - vagrant file (easily build windows/osx guest os)
   - CLI and X versions
 - ubuntu / centos agnosticism
