@@ -14,7 +14,20 @@
         - tree
         - silversearcher-ag
         - cowsay
-        - ansible
+
+    ### ebookz.yml ###
+    - name: install calibre
+      # mostly useful for 'ebook-convert'
+      apt: state=present name=calibre
+
+    ### tmux.yml ###
+    - name: install dependencies
+      apt: state=present name={{ item }}
+      with_items:
+        - tmux
+
+    - name: write tmux.conf
+      copy: src=tmux.conf dest=~/.tmux.conf
 
     ### cut here for sane system python ###
     - name: install deps (mostly for ncurses/readline)
@@ -39,6 +52,9 @@
     - name: install vino and vinagre
       apt: state=present name={{ item }}
       with_items: [ 'vino', 'vinagre' ]
+
+    - name: symlink vino-server into /usr/bin
+      file: src=/usr/lib/vino/vino-server dest=/usr/bin/vino-server state=link
 
     ### cut here for vim.yml ###
     - name: install vim dependencies
