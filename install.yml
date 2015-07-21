@@ -15,6 +15,9 @@
         - silversearcher-ag
         - cowsay
 
+    ### cowsay.yml ###
+
+
     ### ebookz.yml ###
     - name: install calibre
       # mostly useful for 'ebook-convert'
