@@ -1,5 +1,7 @@
 # ideas
 
+- personal / work distinction
+  - calibre is the only relevant package atm
 - offer choice of tmux bar colors 
   - (easily tell what you're sshed into)
    - pass in via CLI with e.g. `--extra-vars "tmux-bar-color=orange foo=bar"`
