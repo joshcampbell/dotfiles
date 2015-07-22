@@ -15,18 +15,17 @@
 - symlink files rather than copying them? certain tradeoffs
   - (like requiring a checkout of this repo on the target system)
   - would require .vimrc.local etc etc
+  - 1-size-fits-all is better right now -- i'm the only user
 
 # vim
 
-- indent / unindent
-- modifications to colorscheme
-    - make bg transparent again
-    - `hi Normal ctermbg=none`
+- indent / unindent in visual mode using tab / shift+tab
 - make statusbar & split less distracting
 - new syntax highlighting scheme (lexmurphy.vim)
     - base it on how 'murphy' looks with my term colors
       - bluish grayscale with red-organge emphesis
     - use hex values instead of colour123
+     make bg transparent again (`hi Normal ctermbg=none`)
     - emphesize comments
     - emphesize variable, function, and class names
     - emphesize {} [] ()
