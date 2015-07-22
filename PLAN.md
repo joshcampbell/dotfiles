@@ -2,6 +2,10 @@
 
 - personal / work distinction
   - calibre is the only relevant package atm
+- manage xfce config
+  - window chrome
+  - firefox & chromium profiles
+- include a directory of wallpapers
 - offer choice of tmux bar colors 
   - (easily tell what you're sshed into)
    - pass in via CLI with e.g. `--extra-vars "tmux-bar-color=orange foo=bar"`
