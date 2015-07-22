@@ -29,7 +29,7 @@
     - base it on how 'murphy' looks with my term colors
       - bluish grayscale with red-organge emphesis
     - use hex values instead of colour123
-     make bg transparent again (`hi Normal ctermbg=none`)
+    - make bg transparent again (`hi Normal ctermbg=none`)
     - emphesize comments
     - emphesize variable, function, and class names
     - emphesize {} [] ()
