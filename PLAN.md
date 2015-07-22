@@ -1,5 +1,3 @@
-# problems
-
 # ideas
 
 - offer choice of tmux bar colors 
@@ -12,6 +10,9 @@
 - vagrant file (easily build windows/osx guest os)
   - CLI and X versions
 - ubuntu / centos agnosticism
+- symlink files rather than copying them? certain tradeoffs
+  - (like requiring a checkout of this repo on the target system)
+  - would require .vimrc.local etc etc
 
 # vim
 
