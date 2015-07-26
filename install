@@ -1,2 +1,2 @@
-#!/bin/sh
-sudo ansible-playbook install.yml -c local -i 127.0.0.1,
+#!/bin/bash
+ANSIBLE_COW_SELECTION=rms sudo ansible-playbook install.yml -c local -i 127.0.0.1,

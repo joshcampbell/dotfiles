@@ -16,7 +16,11 @@
         - cowsay
 
     ### cowsay.yml ###
+    - name: install rms cowfile
+      copy: src=rms.cow dest=/usr/share/cowsay/cows/rms.cow
 
+    - name: set as default ansible cowfile
+      lineinfile: dest=/etc/environment line=ANSIBLE_COW_SELECTION=rms.cow
 
     ### ebookz.yml ###
     - name: install calibre
@@ -71,6 +75,11 @@
       with_items:
         - ~/.vim/autoload
         - ~/.vim/bundle
+        - ~/.vim/colors
+
+    - name: install vim colorscheme
+      copy: src=lexmurphy.vim dest=~/.vim/colors
+      
 
     - name: install vim-pathogen
       copy: src=pathogen.vim dest=~/.vim/autoload/pathogen.vim
