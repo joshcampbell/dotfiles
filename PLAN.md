@@ -39,7 +39,7 @@
 
 # vim
 
-- indent / unindent in visual mode using tab / shift+tab
+- introduce plugin for shifting of visual blocks (what's it called?)
 - make statusbar & split less distracting
     - make bg transparent again (`hi Normal ctermbg=none`)
 - modifications to colorscheme (lexmurphy.vim)
