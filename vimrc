@@ -19,6 +19,8 @@ set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
 " this one looks good in solarized colors
 " (makes comments stand out)
-colorscheme murphy
+colorscheme lexmurphy
+
 " local colorscheme modifications
-" (i should find source for murphy and modify it)
+" (FIXME find source for murphy and modify it)
+hi Normal ctermbg=none
