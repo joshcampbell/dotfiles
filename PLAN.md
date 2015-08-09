@@ -51,3 +51,4 @@
     - emphesize variable, function, and class names
     - emphesize {} [] ()
     - de-emphesize language keywords
+- when reading python code, highlight docstrings like comments

@@ -28,6 +28,7 @@ hi Todo			term=standout  ctermbg=Yellow ctermfg=Black
 hi Cursor ctermbg=black term=bold
 hi CursorColumn ctermbg=black cterm=NONE
 hi CursorLine ctermbg=black cterm=NONE
+hi ColorColumn ctermbg=black cterm=NONE
 hi Directory	term=bold	   ctermfg=LightCyan
 hi ErrorMsg		term=standout  ctermbg=DarkRed	  ctermfg=White
 hi IncSearch	term=reverse   cterm=reverse
@@ -42,3 +43,7 @@ hi StatusLineNC term=bold
 hi Title		term=bold	   ctermfg=LightMagenta
 hi WarningMsg	term=standout  ctermfg=LightRed
 hi Visual		term=reverse   cterm=reverse
+hi VertSplit cterm=none
+hi NonText ctermfg=black
+
+set fillchars+=vert:│

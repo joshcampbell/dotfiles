@@ -14,6 +14,7 @@
         - tree
         - silversearcher-ag
         - cowsay
+        - fonts-inconsolata
 
     ### cowsay.yml ###
     - name: install rms cowfile
@@ -22,10 +23,15 @@
     - name: set as default ansible cowfile
       lineinfile: dest=/etc/environment line=ANSIBLE_COW_SELECTION=rms.cow
 
-    ### ebookz.yml ###
-    - name: install calibre
-      # mostly useful for 'ebook-convert'
-      apt: state=present name=calibre
+    ### node.yml ###
+    - name: install node package
+      apt: state=present name={{ item }}
+      with_items:
+        - nodejs
+        - npm
+
+    - name: symlink /usr/bin/node => /usr/bin/nodejs
+      file: state=link src=/usr/bin/nodejs dest=/usr/bin/node
 
     ### tmux.yml ###
     - name: install dependencies
@@ -98,3 +104,9 @@
         - tpope/vim-markdown
         - tpope/vim-jdaddy
         - tpope/vim-eunuch
+
+    ### ebookz.yml ###
+    - name: install calibre
+      # mostly useful for 'ebook-convert'
+      apt: state=present name=calibre
+
