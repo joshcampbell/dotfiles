@@ -23,16 +23,6 @@
     - name: set as default ansible cowfile
       lineinfile: dest=/etc/environment line=ANSIBLE_COW_SELECTION=rms.cow
 
-    ### node.yml ###
-    - name: install node package
-      apt: state=present name={{ item }}
-      with_items:
-        - nodejs
-        - npm
-
-    - name: symlink /usr/bin/node => /usr/bin/nodejs
-      file: state=link src=/usr/bin/nodejs dest=/usr/bin/node
-
     ### tmux.yml ###
     - name: install dependencies
       apt: state=present name={{ item }}
@@ -41,33 +31,6 @@
 
     - name: write tmux.conf
       copy: src=tmux.conf dest=~/.tmux.conf
-
-    ### cut here for sane system python ###
-    - name: install deps (mostly for ncurses/readline)
-      apt: state=present name={{ item }}
-      with_items:
-        - python-dev
-        - libncurses5
-        - libncurses5-dev
-        - build-essential
-        - libncursesw5-dev
-        - libssl-dev
-        - libsqlite3-dev
-        - tk-dev
-        - libgdbm-dev
-        - libc6-dev
-        - libbz2-dev
-
-    - name: install readline support for python -i
-      command: pip install readline
-
-    ### cut here for screen sharing ###
-    - name: install vino and vinagre
-      apt: state=present name={{ item }}
-      with_items: [ 'vino', 'vinagre' ]
-
-    - name: symlink vino-server into /usr/bin
-      file: src=/usr/lib/vino/vino-server dest=/usr/bin/vino-server state=link
 
     ### cut here for vim.yml ###
     - name: install vim dependencies
@@ -85,7 +48,6 @@
 
     - name: install vim colorscheme
       copy: src=lexmurphy.vim dest=~/.vim/colors
-      
 
     - name: install vim-pathogen
       copy: src=pathogen.vim dest=~/.vim/autoload/pathogen.vim
@@ -104,9 +66,3 @@
         - tpope/vim-markdown
         - tpope/vim-jdaddy
         - tpope/vim-eunuch
-
-    ### ebookz.yml ###
-    - name: install calibre
-      # mostly useful for 'ebook-convert'
-      apt: state=present name=calibre
-
